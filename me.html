@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: pink;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2rem;
+            color: red;
+        }
+        .buttons {
+            margin-top: 20px;
+            position: relative;
+        }
+        button {
+            font-size: 1.5rem;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #yes {
+            background-color: red;
+            color: white;
+            border-radius: 10px;
+        }
+        #no {
+            background-color: white;
+            color: black;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Would you be my Valentine? ❤️</h1>
+    <div class="buttons">
+        <button id="yes" onclick="alert('Yay! ❤️')">Yes</button>
+        <button id="no" onclick="growYes()">No</button>
+    </div>
+
+    <script>
+        let yesButton = document.getElementById("yes");
+        let noButton = document.getElementById("no");
+        let size = 1.5;
+        function growYes() {
+            size += 0.5;
+            yesButton.style.fontSize = `${size}rem`;
+            yesButton.style.padding = `${size * 5}px ${size * 10}px`;
+            noButton.style.opacity -= 0.2;
+            if (noButton.style.opacity <= 0) {
+                noButton.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
